@@ -10,9 +10,9 @@ export const profile = {
   resumeUrl: null,
   socials: {
     github: 'mohitjangra19',
-    linkedin: 'https://www.linkedin.com/',
-    twitter: null,
-    website: null,
+    linkedin: 'https://www.linkedin.com/in/mohit-jangra-255764261/',
+    twitter: 'https://x.com/MohitJangr75556',
+    website: 'https://portfolio-t2uf.vercel.app/',
   },
 };
 
