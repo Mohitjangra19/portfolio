@@ -160,9 +160,27 @@ export default function HorizontalScrollProjects({ projects = [], id = 'projects
                 <div className="rounded-2xl border border-white/10 bg-zinc-900/60 shadow-[0_10px_50px_rgba(0,0,0,0.5)] p-5 sm:p-6">
                   <div className="grid md:grid-cols-5 gap-5 items-center">
                     <div className="md:col-span-2 md:order-first" ref={(el) => (detailRefs.current[i] = el)}>
-                      {p.title && <h3 className="text-xl sm:text-2xl font-semibold">{p.title}</h3>}
-                      {p.description && (
-                        <p className="mt-2 text-sm text-zinc-300 leading-relaxed">{p.description}</p>
+                      {p.title && <h3 className="text-xl sm:text-2xl font-bold">{p.title}</h3>}
+
+                      {p.problem ? (
+                        <div className="mt-4 space-y-3">
+                          <div>
+                            <h4 className="text-xs font-semibold text-indigo-400 uppercase tracking-wider">Problem</h4>
+                            <p className="text-sm text-zinc-300 leading-relaxed">{p.problem}</p>
+                          </div>
+                          <div>
+                            <h4 className="text-xs font-semibold text-indigo-400 uppercase tracking-wider">Solution</h4>
+                            <p className="text-sm text-zinc-300 leading-relaxed">{p.solution}</p>
+                          </div>
+                          <div>
+                            <h4 className="text-xs font-semibold text-indigo-400 uppercase tracking-wider">Result</h4>
+                            <p className="text-sm text-zinc-300 leading-relaxed">{p.result}</p>
+                          </div>
+                        </div>
+                      ) : (
+                        p.description && (
+                          <p className="mt-2 text-sm text-zinc-300 leading-relaxed">{p.description}</p>
+                        )
                       )}
                       {Array.isArray(p.tags) && p.tags.length > 0 && (
                         <div className="mt-3 flex flex-wrap gap-2">

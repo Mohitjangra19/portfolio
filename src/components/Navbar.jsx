@@ -1,5 +1,7 @@
 import React from 'react';
 
+import { profile } from '../data/site';
+
 const NavLink = ({ href, children }) => (
   <a
     href={href}
@@ -13,7 +15,7 @@ export default function Navbar() {
   return (
     <header className="sticky top-0 z-40 backdrop-blur-md bg-zinc-900/60 border-b border-white/10">
       <div className="mx-auto max-w-6xl px-4 sm:px-6 flex items-center justify-between h-14">
-        <a href="#welcome" className="text-white font-semibold tracking-tight">
+        <a href="#welcome" className="text-white font-semibold tracking-tight text-xl">
           MJ
         </a>
         <nav className="hidden sm:flex items-center gap-1">
@@ -21,9 +23,17 @@ export default function Navbar() {
           <NavLink href="#about">About</NavLink>
           <NavLink href="#projects">Projects</NavLink>
           <NavLink href="#experience">Experience</NavLink>
-          <NavLink href="#github">GitHub</NavLink>
           <NavLink href="#skills">Skills</NavLink>
           <NavLink href="#contact">Connect</NavLink>
+          {profile.resumeUrl && (
+            <a
+              href={profile.resumeUrl}
+              download
+              className="ml-2 px-4 py-2 rounded-md text-sm font-medium bg-white text-zinc-900 hover:bg-zinc-200 transition-colors"
+            >
+              Resume
+            </a>
+          )}
         </nav>
       </div>
     </header>
